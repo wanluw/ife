@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>task0002_5</title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .inner {
+        width: 700px;
+        margin: 50px auto;
+    }
+    li {
+        list-style: none;
+    }
+    .main {
+        width: 600px;
+        height: 600px;
+        background-color: #DDD;
+        overflow: hidden;
+    }
+    .main-left {
+        float: left;
+        margin: 20px;
+        width: 250px;
+        height: 560px;
+        border: 1px solid #B3B3B3;
+    }
+    .main-right {
+        float: right;
+        margin: 20px;
+        width: 250px;
+        height: 560px;
+        border: 1px solid #B3B3B3;
+    }
+    .list-item {
+        width: 248px;
+        height: 50px;
+        background-color: #94CDE4;
+        border: 1px solid #B3B3B3;
+        cursor: move;
+    }
+    .current {
+        background-color: #25C2FC;
+    }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="inner">
+            <div class="main">
+                <div class="main-left">
+                    <ul class="list list-left" data-type="left">
+                        <li class="list-item"></li>
+                        <li class="list-item"></li>
+                        <li class="list-item"></li>
+                        <li class="list-item"></li>
+                        <li class="list-item"></li>
+                        <li class="list-item"></li>
+                    </ul>
+                </div>
+                <div class="main-right">
+                    <ul class="list list-right" data-type="right">
+                        <li class="list-item"></li>
+                        <li class="list-item"></li>
+                        <li class="list-item"></li>
+                        <li class="list-item"></li>
+                        <li class="list-item"></li>
+                        <li class="list-item"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/util.js"></script>
+    <script src="js/task0002_5.js"></script>
+</body>
+</html>

@@ -134,3 +134,21 @@ $.animate = function (options) {
         }
     }, 16);
 };
+
+function getCompatElement(elem) {
+    var compatMode = document.compatMode;
+    return (!compatMode || compatMode === 'CSS1Compat') ? document.documentElement : document.body;
+}
+
+function getClientPosition(elem) {
+    var bounding = elem.getBoundingClientRect();
+    var clientTop = getCompatElement().clientTop;
+    var clientLeft = getCompatElement().clientLeft;
+
+    return {
+        top: bounding.top - clientTop,
+        left: bounding.left - clientLeft
+    };
+};
+
+
