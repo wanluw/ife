@@ -1,0 +1,82 @@
+.content {
+    position: absolute;
+    top: 62px;
+    bottom: 0px;
+    left: 460px;
+    right: 0px;
+}
+.content-hd {
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    font-weight: bolder;
+    padding-left: 15px;
+    border-bottom: 1px solid #EEE;
+    overflow: hidden;
+}
+.content-bd {
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #EEE;
+    padding-left: 15px;
+}
+.content-ft {
+    padding-left: 15px;
+    padding-top: 20px;
+    font-size: 14px;
+    border: none;
+    outline: none;
+}
+.content-form {
+    display: none;
+}
+.content-hd-link {
+    float: right;
+    display: none;
+}
+.finish {
+    float: right;
+    height: 50px;
+    width: 50px;
+    background: url(../img/finish.png) no-repeat left center;
+}
+.compile {
+    float: right;
+    height: 50px;
+    width: 50px;
+    background: url(../img/compile.png) no-repeat left center;
+}
+.dialog-content {
+    height: 250px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.name, .content-date, .content-ft-item{
+    border: none;
+    outline: none;
+}
+.title-tips, .date-tips, .newContent-tips {
+    color: #FE3A42;
+    font-size: 12px;
+}
+
+
+.task-save, .task-cancel {
+    width: 70px;
+    height: 35px;
+    border: none;
+    background-color: #E6E6E6;
+    margin-top: 10px;
+    margin-right: 10px;
+    outline: none;
+}
+.task-save {
+    position: absolute;
+    left: 20px;
+    bottom: 50px;
+}
+.task-cancel {
+    position: absolute;
+    left: 120px;
+    bottom: 50px;
+}

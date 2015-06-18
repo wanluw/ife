@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>task0003</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/task0003.css">
+    <link rel="stylesheet" href="css/category.css">
+    <link rel="stylesheet" href="css/dialog.css">
+    <link rel="stylesheet" href="css/task.css">
+    <link rel="stylesheet" href="css/content.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <h1>GTD Tools</h1>
+        </div>
+        <div class="main">
+            <div class="category">
+                <p class="category-hd">所有任务</p>
+                <div class="category-bd">
+                    <p class="list-title">分类列表</p>
+                    <ul class="list">
+                    </ul>
+                </div>
+                <div class="category-ft">
+                    <a href="#" class="category-ft-link">新增分类</a>
+                </div>
+            </div>
+            <div class="task">
+                <div class="task-hd">
+                    <a href="#" class="task-hd-item" data-type="all">所有</a><a href="#" class="task-hd-item" data-type="unfinished">未完成</a><a href="#" class="task-hd-item" data-type="finished">已完成</a>
+                </div>
+                <div class="task-bd">
+                </div>
+                <div class="task-ft">
+                    <a href="#" class="task-ft-link">新增任务</a>
+                </div>
+            </div>
+            <div class="content">
+                <form class="content-form">
+                    <fieldset>
+                        <div class="content-hd">
+                            <label for="title" class="content-hd-label"></label>
+                            <input id="title" type="text" class="name" disabled="disabled" autocomplete="off"><span class="title-tips"></span>
+                            <div class="content-hd-link">
+                                <a href="#" class="compile"></a><a href="#" class="finish"></a>
+                            </div>
+                        </div>
+                        <div class="content-bd">
+                            <label for="date">日期： </label>
+                            <input id="date" type="text" class="content-date" disabled="disabled" autocomplete="off"><span class="date-tips"></span>
+                        </div>
+                        <div class="content-ft">
+                            <p><span class="newContent-tips"></span></p>
+                            <textarea disabled="disabled" class="dialog-content content-ft-item"></textarea>
+                            <div class="content-ft-button">
+                                <button class="task-save">保存修改</button><button class="task-cancel">取消修改</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="dialog-category">
+        <div class="dialog-category-inner">
+            <div class="dialog-hd">
+                新增分类<a href="#" class="category-cancel">x</a>
+            </div>
+            <div class="dialog-bd">
+                <form>
+                    <fieldset>
+                        <div class="dialog-categoryName">
+                            <label for="categoryName">分类名称： </label>
+                            <input type="text" id="categoryName">
+                        </div>
+                        <div class="dialog-savePath">
+                            <label for="savePath">保存路径:</label>
+                            <select id="savePath" class="dialog-select">
+                                <option>分类列表</option>
+                            </select>
+                        </div>
+                        <button class="category-save">保存</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="mask"></div>
+    <script src="js/tmpl.js"></script>
+    <script type="text/template" id="tplCategory">
+        <%data.forEach(function (categoryData, index) {%>
+            <li class="list-item">
+                <a href="#" class="list-item-link" data-id="<%=categoryData.id%>">
+                    <%=categoryData.name%>(<%=categoryData.todo%>)
+                </a>
+                <%if (state.currentCategoryID === categoryData.id) {%>
+                    <ul class="list-inner" style="display: block;">
+                <%} else {%>
+                    <ul class="list-inner">
+                <%}%>
+                    <%categoryData.children.forEach(function (subCategoryData) {%>
+                        <li class="list-inner-item">
+                            <%if (state.currentSubCategoryID === subCategoryData.id) {%>
+                                <a href="#" class="list-inner-item-title target-list-inner-item" data-id="<%=subCategoryData.id%>">
+                                <%=subCategoryData.name%>(<%=subCategoryData.todo%>)
+                                </a>
+                            <%} else {%>
+                                <a href="#" class="list-inner-item-title" data-id="<%=subCategoryData.id%>">
+                                <%=subCategoryData.name%>(<%=subCategoryData.todo%>)
+                                </a>
+                            <%}%>
+
+                            <a href="#" class="list-inner-item-delete"></a>
+                        </li>
+                    <%});%>
+                </ul>
+                <a href="#" class="list-item-delete"></a>
+            </li>
+        <%});%>
+    </script>
+    <script type="text/template" id="tplTask">
+        <%for (var key in tasksData) { var value = tasksData[key];%>
+            <div class="task-bd-item">
+                <p class="task-date"><%=key%></p>
+                <div class="task-content">
+                    <%value.forEach(function (taskItem) {%>
+                        <%if (taskItem.isFinish === true) {%>
+                            <a href="#" class="task-title task-finished" data-id="<%=taskItem.id%>"><%=taskItem.name%></a>
+                        <%} else {%>
+                            <a href="#" class="task-title task-unfinished" data-id="<%=taskItem.id%>"><%=taskItem.name%></a>
+                        <%}%>
+                    <%});%>
+                </div>
+            </div>
+        <%}%>
+    </script>
+    <script src="js/require.js"></script>
+    <script>
+        require.config({
+            baseUrl: './js',
+        });
+    </script>
+    <script>
+        require(['app'], function (app) {
+            app.init();
+        });
+    </script>
+</body>
+</html>

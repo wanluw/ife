@@ -1,0 +1,70 @@
+.task {
+    position: absolute;
+    left: 230px;
+    top: 62px;
+    bottom: 0;
+    width: 228px;
+    border: 1px solid #CCC;
+    border-top: none;
+    border-bottom: none;
+}
+.task-date {
+    display: none;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 20px;
+    background-color: #FAFAEF;
+}
+.task-hd {
+    height: 40px;
+    line-height: 40px;
+    background-color: #EEE;
+    padding-left: 10px;
+}
+.task-hd-item {
+    padding: 5px 10px;
+    border: 1px solid #EEE;
+}
+.target-task-hd {
+    border: 1px solid #CCC;
+    background-color: #FFF;
+}
+.task-bd {
+    display: none;
+}
+.task-bd-item {
+    overflow: hidden;
+}
+.target-task-bd {
+    background-color: #F2F2F2;
+}
+.task-unfinished, .task-finished {
+    /*display: none;*/
+}
+.task-title {
+    display: block;
+    height: 25px;
+    width: 193px;
+    line-height: 25px;
+    padding-left: 35px;
+}
+
+.task-finished {
+    color: #008C28;
+}
+.task-ft {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.task-ft-link {
+    display: block;
+    height: 40px;
+    width: 183px;
+    line-height: 40px;
+    padding-left: 45px;
+    background: url(../img/add.png) no-repeat 18px center #EEE;
+    font-size: 14px;
+    border-top: 1px solid #CCC;
+}
+

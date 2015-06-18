@@ -1,0 +1,23 @@
+body {
+    font: 12px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
+li {
+    list-style: none;
+}
+.header {
+    height: 60px;
+    line-height: 60px;
+    padding-left: 12px;
+    font-size: 16px;
+    border: 1px solid #CCC;
+    background-color: #DDD;
+    color: #999;
+}
+.main {
+    overflow: hidden;
+}
+

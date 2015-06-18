@@ -1,0 +1,69 @@
+.category {
+    position: absolute;
+    top:62px;
+    bottom: 0;
+    width: 230px;
+    font-size: 14px;
+    background-color: #F2F2F2;
+    color: #333;
+}
+.category-hd {
+    padding-left: 12px;
+    height: 40px;
+    line-height: 40px;
+}
+.category-ft {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+}
+.category-ft-link {
+    display: block;
+    height: 40px;
+    width: 185px;
+    line-height: 40px;
+    padding-left: 45px;
+    background: url(../img/add.png) no-repeat 18px center #EEE;
+    border-top: 1px solid #CCC;
+}
+.list-item-link, .defaultCategory {
+    display: block;
+    padding-left: 50px;
+    background: url(../img/folder.png) no-repeat 15px center;
+    height: 30px;
+    line-height: 30px;
+}
+.list-title {
+    padding-left: 15px;
+}
+.list-inner {
+    display: none;
+}
+.list-inner-item {
+    overflow: hidden;
+    position: relative;
+}
+.list-inner-item-title {
+    display: block;
+    width: 165px;
+    padding-left: 65px;
+    height: 30px;
+    line-height: 30px;
+    background: url(../img/text.png) no-repeat 45px center;
+}
+.list-item {
+    position: relative;
+}
+.target-list-inner-item {
+    background-color: #FFF;
+}
+.list-item-delete,.list-inner-item-delete {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 30px;
+    width: 30px;
+    background: url(../img/delete.png) no-repeat left center;
+    display: none;
+}
